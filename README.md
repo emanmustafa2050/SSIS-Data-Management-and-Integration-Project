@@ -162,4 +162,4 @@ Future Improvements:
     - Add more advanced transformations for real-world scenarios.
 
     - Implement logging and monitoring features for better error tracking.
- ![Image Alt](ttps://github.com/emanmustafa2050/SSIS-Data-Management-and-Integration-Project-SSIS-/blob/f66f8962973a3d9786937534287231b787023639/Split_And_Sort_Course_Data.PNG)
+ ![Image alt](ttps://github.com/emanmustafa2050/SSIS-Data-Management-and-Integration-Project-SSIS-/blob/f66f8962973a3d9786937534287231b787023639/Split_And_Sort_Course_Data.PNG)
