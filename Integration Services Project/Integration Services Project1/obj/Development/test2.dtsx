@@ -1,0 +1,1346 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/25/2025 4:38:56 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-CEJVNO2"
+  DTS:CreatorName="DESKTOP-CEJVNO2\Eman"
+  DTS:DTSID="{04DB2FBF-47E8-4C84-B515-21BD9D2ED303}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="4105"
+  DTS:ObjectName="Package2"
+  DTS:PackageType="5"
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{D1289010-E0CC-45C5-B814-C70114D5423A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-CEJVNO2\SQLEXPRESS.ITI]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D21DEB7F-0FE8-4C36-A17D-486ED122EC83}"
+      DTS:ObjectName="DESKTOP-CEJVNO2\SQLEXPRESS.ITI">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-CEJVNO2\SQLEXPRESS;Initial Catalog=ITI;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-CEJVNO2\SQLEXPRESS.ITI 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DA79AB7A-B62B-4FB1-8FAC-A8F9A98002BF}"
+      DTS:ObjectName="DESKTOP-CEJVNO2\SQLEXPRESS.ITI 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-CEJVNO2\SQLEXPRESS;Initial Catalog=ITI;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-CEJVNO2\SQLEXPRESS.ITI 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{42D495B6-5BCF-4260-B87E-6C87F3166565}"
+      DTS:ObjectName="DESKTOP-CEJVNO2\SQLEXPRESS.ITI 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-CEJVNO2\SQLEXPRESS;Initial Catalog=ITI;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package2-{42D495B6-5BCF-4260-B87E-6C87F3166565}DESKTOP-CEJVNO2\SQLEXPRESS.ITI 2;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[equal]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{4F85BE33-1EF4-480D-A2DB-D67826C291D8}"
+      DTS:ObjectName="equal">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="4105"
+          DTS:HeaderRowDelimiter="_x002C_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\ITI\02.BI_Engineer Rami\02.MSBI Lecture Notes\SSIS\ass\GreaterThan.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="St_Id"
+              DTS:DTSID="{3D126E45-E65F-403D-9653-FD36972C9891}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="St_Fname"
+              DTS:DTSID="{8D36AADC-2EE0-4123-89D1-BB3CD00FD376}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="St_Lname"
+              DTS:DTSID="{F652EB12-64E0-4165-A9F0-74D200C5365C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="St_Address"
+              DTS:DTSID="{4F84CA74-4AC7-4CE2-83A0-D112C8689434}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="St_Age"
+              DTS:DTSID="{513E94E3-78BF-403D-A36E-6E4999FB243E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dept_Id"
+              DTS:DTSID="{8B0EBEF5-9B29-4A55-80E3-F4BB2A1F87AC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="St_super"
+              DTS:DTSID="{1DEACA11-2528-46BB-8A2C-85ECAE7E865D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{326FB017-E2B1-4093-BC5B-692EE4317C90}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\ITI\02.BI_Engineer Rami\02.MSBI Lecture Notes\SSIS\SortdByAga.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 1]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{EC8D2BF9-CF22-4FFF-9D2F-98B0B0C724F6}"
+      DTS:ObjectName="Excel Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\ITI\02.BI_Engineer Rami\02.MSBI Lecture Notes\SSIS\sortedstu.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 2]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{09B8A211-DAA1-4F57-B8BE-DD15B1D52A88}"
+      DTS:ObjectName="Excel Connection Manager 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\ITI\02.BI_Engineer Rami\02.MSBI Lecture Notes\SSIS\ass\anything.xls;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 3]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{C6869CF2-29E7-4150-B2B8-36B41F55B28D}"
+      DTS:ObjectName="Excel Connection Manager 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\ITI\02.BI_Engineer Rami\02.MSBI Lecture Notes\SSIS\test.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 4]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{BE08EA82-0FF5-42F6-BD70-5EE419DF8109}"
+      DTS:ObjectName="Excel Connection Manager 4">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\ITI\02.BI_Engineer Rami\02.MSBI Lecture Notes\SSIS\sortedstu.xls;Extended Properties=&quot;EXCEL 5.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 5]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{ADA70D29-A4C6-4751-9F56-9701550D4EAD}"
+      DTS:ObjectName="Excel Connection Manager 5">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\test1.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 6]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{9942BA39-7192-4F90-B10E-45B3D512BCD4}"
+      DTS:ObjectName="Excel Connection Manager 6">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\any.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 7]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{7D4146D7-F298-4D24-8D8E-B64E4B38A05F}"
+      DTS:ObjectName="Excel Connection Manager 7">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\ITI\02.BI_Engineer Rami\02.MSBI Lecture Notes\SSIS\ass\equal23.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 8]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{21D00FD5-AB71-4F11-ABB2-040E54F3D6DB}"
+      DTS:ObjectName="Excel Connection Manager 8">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\ITI\02.BI_Engineer Rami\02.MSBI Lecture Notes\SSIS\equalto.xlsx;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 9]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{5CF71C76-6E3C-40C7-9334-590481328734}"
+      DTS:ObjectName="Excel Connection Manager 9">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\any.xlsx;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{50193B5A-7B3D-431D-AA83-6A4DC4502BD4}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="4105"
+          DTS:Unicode="True"
+          DTS:HeaderRowDelimiter="_x002C_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\ITI\02.BI_Engineer Rami\02.MSBI Lecture Notes\SSIS\ass\equal.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="St_Id"
+              DTS:DTSID="{39468F23-7897-4701-9809-A69A0CAEA610}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="St_Fname"
+              DTS:DTSID="{CA5B38F5-287F-4DF9-BB53-CB3DBBC76AE9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="St_Lname"
+              DTS:DTSID="{86028ED6-0804-496D-95B2-4633E1D3E1B4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="St_Address"
+              DTS:DTSID="{472D3E55-8D11-4883-B2E1-A57100128CCA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="St_Age"
+              DTS:DTSID="{C153115C-C477-4D0E-BA36-C3CFD646CB01}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dept_Id"
+              DTS:DTSID="{B89AA1E8-E1E8-45DB-AB3B-FA4280A6CA0A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="St_super"
+              DTS:DTSID="{DE3784CB-C5F3-44F3-A8F9-01954F30D620}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B864209F-33C0-4C18-AF7C-B4C4C524E41A}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="4105"
+          DTS:Unicode="True"
+          DTS:HeaderRowDelimiter="_x002C_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\ITI\02.BI_Engineer Rami\02.MSBI Lecture Notes\SSIS\ass\LessThan.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="St_Id"
+              DTS:DTSID="{F6250255-9121-4BF9-A03C-FE363E53896B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="St_Fname"
+              DTS:DTSID="{2FA3A6B8-2E92-49CD-8762-7852419C218B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="St_Lname"
+              DTS:DTSID="{F2E7DAEC-EEB7-4016-B090-AB799D6DC1E3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="St_Address"
+              DTS:DTSID="{A3B585A8-549D-46C5-972C-16E25C0B1E84}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="St_Age"
+              DTS:DTSID="{FBEAF5B0-5C7C-4F0A-BBF4-833ED39078F5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dept_Id"
+              DTS:DTSID="{41561AC3-9F02-4DF6-AE72-63CB978D40A2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="St_super"
+              DTS:DTSID="{7EC78B10-9C32-4D61-8D99-25A76F07F243}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{4B731065-C064-4DBC-9955-B31A64DEC540}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input].Columns[St_Age]"
+                      cachedDataType="i4"
+                      cachedName="St_Age"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Age]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[greaterThan23]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="greaterThan23"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[REPLACENULL](#{Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Age]},0) &gt; 23</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">REPLACENULL(St_Age,0) &gt; 23</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[LessThan23]"
+                  description="Output 2 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="LessThan23"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[REPLACENULL](#{Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Age]},0) &lt; 23</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">REPLACENULL(St_Age,0) &lt; 23</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="4105"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[equal]"
+                  connectionManagerRefId="Package.ConnectionManagers[equal]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[St_Id]"
+                      cachedDataType="i4"
+                      cachedName="St_Id"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[St_Id]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[St_Fname]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="St_Fname"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[St_Fname]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Fname]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[St_Lname]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="St_Lname"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[St_Lname]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Lname]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[St_Address]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="St_Address"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[St_Address]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Address]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[St_Age]"
+                      cachedDataType="i4"
+                      cachedName="St_Age"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[St_Age]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Age]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Dept_Id]"
+                      cachedDataType="i4"
+                      cachedName="Dept_Id"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Dept_Id]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[Dept_Id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[St_super]"
+                      cachedDataType="i4"
+                      cachedName="St_super"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[St_super]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_super]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[St_Id]"
+                      dataType="i4"
+                      name="St_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[St_Fname]"
+                      dataType="wstr"
+                      length="50"
+                      name="St_Fname" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[St_Lname]"
+                      dataType="wstr"
+                      length="10"
+                      name="St_Lname" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[St_Address]"
+                      dataType="wstr"
+                      length="100"
+                      name="St_Address" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[St_Age]"
+                      dataType="i4"
+                      name="St_Age" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Dept_Id]"
+                      dataType="i4"
+                      name="Dept_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[St_super]"
+                      dataType="i4"
+                      name="St_super" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Flat File Destination 1"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="4105"
+              name="Flat File Destination 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Flat File Destination 1.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].Columns[St_Id]"
+                      cachedDataType="i4"
+                      cachedName="St_Id"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[St_Id]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].Columns[St_Fname]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="St_Fname"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[St_Fname]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Fname]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].Columns[St_Lname]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="St_Lname"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[St_Lname]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Lname]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].Columns[St_Address]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="St_Address"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[St_Address]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Address]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].Columns[St_Age]"
+                      cachedDataType="i4"
+                      cachedName="St_Age"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[St_Age]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Age]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].Columns[Dept_Id]"
+                      cachedDataType="i4"
+                      cachedName="Dept_Id"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[Dept_Id]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[Dept_Id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].Columns[St_super]"
+                      cachedDataType="i4"
+                      cachedName="St_super"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[St_super]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_super]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[St_Id]"
+                      dataType="i4"
+                      name="St_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[St_Fname]"
+                      dataType="wstr"
+                      length="50"
+                      name="St_Fname" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[St_Lname]"
+                      dataType="wstr"
+                      length="10"
+                      name="St_Lname" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[St_Address]"
+                      dataType="wstr"
+                      length="100"
+                      name="St_Address" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[St_Age]"
+                      dataType="i4"
+                      name="St_Age" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[Dept_Id]"
+                      dataType="i4"
+                      name="Dept_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[St_super]"
+                      dataType="i4"
+                      name="St_super" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Flat File Destination 2"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="4105"
+              name="Flat File Destination 2"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Flat File Destination 2.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Flat File Destination 2.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination 2.Inputs[Flat File Destination Input].Columns[St_Id]"
+                      cachedDataType="i4"
+                      cachedName="St_Id"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination 2.Inputs[Flat File Destination Input].ExternalColumns[St_Id]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination 2.Inputs[Flat File Destination Input].Columns[St_Fname]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="St_Fname"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination 2.Inputs[Flat File Destination Input].ExternalColumns[St_Fname]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Fname]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination 2.Inputs[Flat File Destination Input].Columns[St_Lname]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="St_Lname"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination 2.Inputs[Flat File Destination Input].ExternalColumns[St_Lname]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Lname]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination 2.Inputs[Flat File Destination Input].Columns[St_Address]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="St_Address"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination 2.Inputs[Flat File Destination Input].ExternalColumns[St_Address]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Address]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination 2.Inputs[Flat File Destination Input].Columns[St_Age]"
+                      cachedDataType="i4"
+                      cachedName="St_Age"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination 2.Inputs[Flat File Destination Input].ExternalColumns[St_Age]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Age]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination 2.Inputs[Flat File Destination Input].Columns[Dept_Id]"
+                      cachedDataType="i4"
+                      cachedName="Dept_Id"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination 2.Inputs[Flat File Destination Input].ExternalColumns[Dept_Id]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[Dept_Id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination 2.Inputs[Flat File Destination Input].Columns[St_super]"
+                      cachedDataType="i4"
+                      cachedName="St_super"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination 2.Inputs[Flat File Destination Input].ExternalColumns[St_super]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_super]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination 2.Inputs[Flat File Destination Input].ExternalColumns[St_Id]"
+                      dataType="i4"
+                      name="St_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination 2.Inputs[Flat File Destination Input].ExternalColumns[St_Fname]"
+                      dataType="wstr"
+                      length="50"
+                      name="St_Fname" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination 2.Inputs[Flat File Destination Input].ExternalColumns[St_Lname]"
+                      dataType="wstr"
+                      length="10"
+                      name="St_Lname" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination 2.Inputs[Flat File Destination Input].ExternalColumns[St_Address]"
+                      dataType="wstr"
+                      length="100"
+                      name="St_Address" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination 2.Inputs[Flat File Destination Input].ExternalColumns[St_Age]"
+                      dataType="i4"
+                      name="St_Age" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination 2.Inputs[Flat File Destination Input].ExternalColumns[Dept_Id]"
+                      dataType="i4"
+                      name="Dept_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination 2.Inputs[Flat File Destination Input].ExternalColumns[St_super]"
+                      dataType="i4"
+                      name="St_super" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\ITI - Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="ITI - Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Student]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\ITI - Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-CEJVNO2\SQLEXPRESS.ITI 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-CEJVNO2\SQLEXPRESS.ITI 2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].ExternalColumns[St_Id]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Id]"
+                      name="St_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Fname]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].ExternalColumns[St_Fname]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Fname]"
+                      name="St_Fname"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Lname]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].ExternalColumns[St_Lname]"
+                      length="10"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Lname]"
+                      name="St_Lname"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Address]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].ExternalColumns[St_Address]"
+                      length="100"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Address]"
+                      name="St_Address"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Age]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].ExternalColumns[St_Age]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_Age]"
+                      name="St_Age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[Dept_Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].ExternalColumns[Dept_Id]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[Dept_Id]"
+                      name="Dept_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_super]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].ExternalColumns[St_super]"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].Columns[St_super]"
+                      name="St_super"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].ExternalColumns[St_Id]"
+                      dataType="i4"
+                      name="St_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].ExternalColumns[St_Fname]"
+                      dataType="wstr"
+                      length="50"
+                      name="St_Fname" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].ExternalColumns[St_Lname]"
+                      dataType="wstr"
+                      length="10"
+                      name="St_Lname" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].ExternalColumns[St_Address]"
+                      dataType="wstr"
+                      length="100"
+                      name="St_Address" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].ExternalColumns[St_Age]"
+                      dataType="i4"
+                      name="St_Age" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].ExternalColumns[Dept_Id]"
+                      dataType="i4"
+                      name="Dept_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output].ExternalColumns[St_super]"
+                      dataType="i4"
+                      name="St_super" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Error Output].Columns[St_Id]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Error Output].Columns[St_Id]"
+                      name="St_Id" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Error Output].Columns[St_Fname]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Error Output].Columns[St_Fname]"
+                      name="St_Fname" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Error Output].Columns[St_Lname]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Error Output].Columns[St_Lname]"
+                      name="St_Lname" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Error Output].Columns[St_Address]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Error Output].Columns[St_Address]"
+                      name="St_Address" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Error Output].Columns[St_Age]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Error Output].Columns[St_Age]"
+                      name="St_Age" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Error Output].Columns[Dept_Id]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Error Output].Columns[Dept_Id]"
+                      name="Dept_Id" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Error Output].Columns[St_super]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Error Output].Columns[St_super]"
+                      name="St_super" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Conditional Split Default Output]"
+              endId="Package\Data Flow Task\Flat File Destination 2.Inputs[Flat File Destination Input]"
+              name="Conditional Split Default Output"
+              startId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Default Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[greaterThan23]"
+              endId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="greaterThan23"
+              startId="Package\Data Flow Task\Conditional Split.Outputs[greaterThan23]" />
+            <path
+              refId="Package\Data Flow Task.Paths[LessThan23]"
+              endId="Package\Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input]"
+              name="LessThan23"
+              startId="Package\Data Flow Task\Conditional Split.Outputs[LessThan23]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\ITI - Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task"
+          TopLeft="235,112" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="208,42"
+          Id="Package\Data Flow Task\ITI - Source"
+          TopLeft="343,27" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Data Flow Task\Flat File Destination 2"
+          TopLeft="728,360" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Data Flow Task\Flat File Destination 1"
+          TopLeft="381,305" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Data Flow Task\Conditional Split"
+          TopLeft="372,163" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Data Flow Task\Flat File Destination"
+          TopLeft="109,287" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="448.25,69">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,94"
+              Start="0,0"
+              End="0,86.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,86.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[LessThan23]"
+          TopLeft="449.5,205">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="22,100"
+              Start="0,0"
+              End="22,92.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46"
+                    Point2="0,50"
+                    Point3="4,50" />
+                  <mssgle:LineSegment
+                    End="18,50" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18,50"
+                    Point2="22,50"
+                    Point3="22,54" />
+                  <mssgle:LineSegment
+                    End="22,92.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.51263671875,55,53.0252734375,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[greaterThan23]"
+          TopLeft="412.75,205">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-217.75,82"
+              Start="0,0"
+              End="-217.75,74.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.2579281183932" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.2579281183932"
+                    Point2="0,28.2579281183932"
+                    Point3="-4,28.2579281183932" />
+                  <mssgle:LineSegment
+                    End="-213.75,28.2579281183932" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-213.75,28.2579281183932"
+                    Point2="-217.75,28.2579281183932"
+                    Point3="-217.75,32.2579281183932" />
+                  <mssgle:LineSegment
+                    End="-217.75,74.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-141.95224609375,33.2579281183932,66.1544921875,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Conditional Split Default Output]"
+          TopLeft="486.25,205">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="332.25,155"
+              Start="0,0"
+              End="332.25,147.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.4143763213531" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,49.4143763213531"
+                    Point2="0,53.4143763213531"
+                    Point3="4,53.4143763213531" />
+                  <mssgle:LineSegment
+                    End="328.25,53.4143763213531" />
+                  <mssgle:CubicBezierSegment
+                    Point1="328.25,53.4143763213531"
+                    Point2="332.25,53.4143763213531"
+                    Point3="332.25,57.4143763213531" />
+                  <mssgle:LineSegment
+                    End="332.25,147.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="95.51109375,58.4143763213531,141.2278125,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\ITI - Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

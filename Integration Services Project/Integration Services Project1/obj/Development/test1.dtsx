@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/25/2025 4:23:09 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-CEJVNO2"
+  DTS:CreatorName="DESKTOP-CEJVNO2\Eman"
+  DTS:DTSID="{9FFC05B9-874E-4FFF-AB93-3939BF4F98FC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="4105"
+  DTS:ObjectName="test1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{3283D9D3-C1D5-4D64-9045-2F39DC919EE9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-CEJVNO2\SQLEXPRESS.ITI]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B7CC03F4-2619-43F8-B3C9-8226863EA93F}"
+      DTS:ObjectName="DESKTOP-CEJVNO2\SQLEXPRESS.ITI">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-CEJVNO2\SQLEXPRESS;Initial Catalog=ITI;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-test1-{B7CC03F4-2619-43F8-B3C9-8226863EA93F}DESKTOP-CEJVNO2\SQLEXPRESS.ITI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Student.txt]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{BDD7F712-2048-499A-B415-895DD23C489C}"
+      DTS:ObjectName="Student.txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="D:\ITI\02.BI_Engineer Rami\02.MSBI Lecture Notes\SSIS\ass\Student.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Bulk Insert Task"
+      DTS:CreationName="Microsoft.BulkInsertTask"
+      DTS:Description="Bulk Insert Task"
+      DTS:DTSID="{8FE9126D-F374-42D1-89A0-23772046820C}"
+      DTS:ExecutableType="Microsoft.BulkInsertTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Bulk Insert Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <BulkInsertTask:BulkInsertTaskData
+          BulkInsertTask:SourceConnectionName="{BDD7F712-2048-499A-B415-895DD23C489C}"
+          BulkInsertTask:DestinationConnectionName="{B7CC03F4-2619-43F8-B3C9-8226863EA93F}"
+          BulkInsertTask:DestinationTableName="[dbo].[Newtable]"
+          BulkInsertTask:FieldTerminator="Comma {,}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{59098C7C-B969-4C53-A326-7C8E79537B2A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B7CC03F4-2619-43F8-B3C9-8226863EA93F}"
+          SQLTask:SqlStatementSource="truncate table Newtable;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{FEF1C704-AEA7-492D-BB3F-EE9A2CC35E1F}"
+      DTS:From="Package\Truncate table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Bulk Insert Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Truncate table"
+          TopLeft="286,34" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Bulk Insert Task"
+          TopLeft="279,192" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="358,76">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,116"
+              Start="0,0"
+              End="0,108.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,108.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

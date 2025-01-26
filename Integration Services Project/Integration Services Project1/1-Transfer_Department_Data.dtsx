@@ -1,0 +1,568 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/25/2025 9:54:32 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-CEJVNO2"
+  DTS:CreatorName="DESKTOP-CEJVNO2\Eman"
+  DTS:Description="DTS Wizard-generated package"
+  DTS:DTSID="{85D614B0-5AC4-4B2E-AEF4-0155BAF06B96}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="4105"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="Package1 1"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{96C9B5D6-183F-494F-BE48-9B6D79390CC4}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FD8C7F00-2453-49B9-8709-01A3C2DFB82F}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-CEJVNO2\SQLEXPRESS;Initial Catalog=Test_DB;Provider=SQLOLEDB;Integrated Security=SSPI;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6BF1794D-D7BE-405C-868D-25660C0DB393}"
+      DTS:ObjectName="SourceConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-CEJVNO2\SQLEXPRESS;Initial Catalog=ITI;Provider=SQLOLEDB;Integrated Security=SSPI;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Department from ITI into"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{89333307-945F-4AE4-894F-B1B3F92AFB82}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Department from ITI into"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FD8C7F00-2453-49B9-8709-01A3C2DFB82F}"
+          SQLTask:SqlStatementSource="CREATE TABLE [dbo].[Department] (&#xA;[Dept_Id] int NOT NULL,&#xA;[Dept_Name] nvarchar(50),&#xA;[Dept_Desc] nvarchar(100),&#xA;[Dept_Location] nvarchar(50),&#xA;[Dept_Manager] int,&#xA;[Manager_hiredate] date&#xA;)&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Test_DB"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{2B5E4DA0-CB3C-4B2E-8E50-E42608AEC976}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Test_DB"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Test_DB\Destination - Department"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - Department"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Department]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Test_DB\Destination - Department.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Test_DB\Destination - Department.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Test_DB\Destination - Department.Inputs[Destination Input].Columns[Dept_Id]"
+                      cachedDataType="i4"
+                      cachedName="Dept_Id"
+                      externalMetadataColumnId="Package\Test_DB\Destination - Department.Inputs[Destination Input].ExternalColumns[Dept_Id]"
+                      lineageId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].Columns[Dept_Id]" />
+                    <inputColumn
+                      refId="Package\Test_DB\Destination - Department.Inputs[Destination Input].Columns[Dept_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Dept_Name"
+                      externalMetadataColumnId="Package\Test_DB\Destination - Department.Inputs[Destination Input].ExternalColumns[Dept_Name]"
+                      lineageId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].Columns[Dept_Name]" />
+                    <inputColumn
+                      refId="Package\Test_DB\Destination - Department.Inputs[Destination Input].Columns[Dept_Desc]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Dept_Desc"
+                      externalMetadataColumnId="Package\Test_DB\Destination - Department.Inputs[Destination Input].ExternalColumns[Dept_Desc]"
+                      lineageId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].Columns[Dept_Desc]" />
+                    <inputColumn
+                      refId="Package\Test_DB\Destination - Department.Inputs[Destination Input].Columns[Dept_Location]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Dept_Location"
+                      externalMetadataColumnId="Package\Test_DB\Destination - Department.Inputs[Destination Input].ExternalColumns[Dept_Location]"
+                      lineageId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].Columns[Dept_Location]" />
+                    <inputColumn
+                      refId="Package\Test_DB\Destination - Department.Inputs[Destination Input].Columns[Dept_Manager]"
+                      cachedDataType="i4"
+                      cachedName="Dept_Manager"
+                      externalMetadataColumnId="Package\Test_DB\Destination - Department.Inputs[Destination Input].ExternalColumns[Dept_Manager]"
+                      lineageId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].Columns[Dept_Manager]" />
+                    <inputColumn
+                      refId="Package\Test_DB\Destination - Department.Inputs[Destination Input].Columns[Manager_hiredate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Manager_hiredate"
+                      externalMetadataColumnId="Package\Test_DB\Destination - Department.Inputs[Destination Input].ExternalColumns[Manager_hiredate]"
+                      lineageId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].Columns[Manager_hiredate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Test_DB\Destination - Department.Inputs[Destination Input].ExternalColumns[Dept_Id]"
+                      dataType="i4"
+                      name="Dept_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Test_DB\Destination - Department.Inputs[Destination Input].ExternalColumns[Dept_Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Dept_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Test_DB\Destination - Department.Inputs[Destination Input].ExternalColumns[Dept_Desc]"
+                      dataType="wstr"
+                      length="100"
+                      name="Dept_Desc" />
+                    <externalMetadataColumn
+                      refId="Package\Test_DB\Destination - Department.Inputs[Destination Input].ExternalColumns[Dept_Location]"
+                      dataType="wstr"
+                      length="50"
+                      name="Dept_Location" />
+                    <externalMetadataColumn
+                      refId="Package\Test_DB\Destination - Department.Inputs[Destination Input].ExternalColumns[Dept_Manager]"
+                      dataType="i4"
+                      name="Dept_Manager" />
+                    <externalMetadataColumn
+                      refId="Package\Test_DB\Destination - Department.Inputs[Destination Input].ExternalColumns[Manager_hiredate]"
+                      dataType="wstr"
+                      length="10"
+                      name="Manager_hiredate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Test_DB\Destination - Department.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Test_DB\Destination - Department.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test_DB\Destination - Department.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Test_DB\Destination - Department.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Test_DB\Destination - Department.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Test_DB\Destination - Department.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Test_DB\Source - Department"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Source - Department"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Department]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Test_DB\Source - Department.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].Columns[Dept_Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].ExternalColumns[Dept_Id]"
+                      lineageId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].Columns[Dept_Id]"
+                      name="Dept_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].Columns[Dept_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].ExternalColumns[Dept_Name]"
+                      length="50"
+                      lineageId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].Columns[Dept_Name]"
+                      name="Dept_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].Columns[Dept_Desc]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].ExternalColumns[Dept_Desc]"
+                      length="100"
+                      lineageId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].Columns[Dept_Desc]"
+                      name="Dept_Desc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].Columns[Dept_Location]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].ExternalColumns[Dept_Location]"
+                      length="50"
+                      lineageId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].Columns[Dept_Location]"
+                      name="Dept_Location"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].Columns[Dept_Manager]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].ExternalColumns[Dept_Manager]"
+                      lineageId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].Columns[Dept_Manager]"
+                      name="Dept_Manager"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].Columns[Manager_hiredate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].ExternalColumns[Manager_hiredate]"
+                      length="10"
+                      lineageId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].Columns[Manager_hiredate]"
+                      name="Manager_hiredate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].ExternalColumns[Dept_Id]"
+                      dataType="i4"
+                      name="Dept_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].ExternalColumns[Dept_Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Dept_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].ExternalColumns[Dept_Desc]"
+                      dataType="wstr"
+                      length="100"
+                      name="Dept_Desc" />
+                    <externalMetadataColumn
+                      refId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].ExternalColumns[Dept_Location]"
+                      dataType="wstr"
+                      length="50"
+                      name="Dept_Location" />
+                    <externalMetadataColumn
+                      refId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].ExternalColumns[Dept_Manager]"
+                      dataType="i4"
+                      name="Dept_Manager" />
+                    <externalMetadataColumn
+                      refId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output].ExternalColumns[Manager_hiredate]"
+                      dataType="wstr"
+                      length="10"
+                      name="Manager_hiredate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Error Output].Columns[Dept_Id]"
+                      dataType="i4"
+                      lineageId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Error Output].Columns[Dept_Id]"
+                      name="Dept_Id" />
+                    <outputColumn
+                      refId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Error Output].Columns[Dept_Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Error Output].Columns[Dept_Name]"
+                      name="Dept_Name" />
+                    <outputColumn
+                      refId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Error Output].Columns[Dept_Desc]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Error Output].Columns[Dept_Desc]"
+                      name="Dept_Desc" />
+                    <outputColumn
+                      refId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Error Output].Columns[Dept_Location]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Error Output].Columns[Dept_Location]"
+                      name="Dept_Location" />
+                    <outputColumn
+                      refId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Error Output].Columns[Dept_Manager]"
+                      dataType="i4"
+                      lineageId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Error Output].Columns[Dept_Manager]"
+                      name="Dept_Manager" />
+                    <outputColumn
+                      refId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Error Output].Columns[Manager_hiredate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Error Output].Columns[Manager_hiredate]"
+                      name="Manager_hiredate" />
+                    <outputColumn
+                      refId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Test_DB.Paths[OLE DB Source Output]"
+              endId="Package\Test_DB\Destination - Department.Inputs[Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Test_DB\Source - Department.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{EE3AF6A1-0DB4-413D-BACF-7B34BF0287E5\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{EE3AF6A1-0DB4-413D-BACF-7B34BF0287E5}"
+      DTS:From="Package\Department from ITI into"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{EE3AF6A1-0DB4-413D-BACF-7B34BF0287E5}"
+      DTS:To="Package\Test_DB" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Department from ITI into"
+          TopLeft="167.5,30.5" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Test_DB"
+          TopLeft="167.5,176.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{EE3AF6A1-0DB4-413D-BACF-7B34BF0287E5\}]"
+          TopLeft="264.75,72.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,104"
+              Start="0,0"
+              End="0,96.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,96.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Test_DB">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Test_DB\Source - Department"
+          TopLeft="16,5.5" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\Test_DB\Destination - Department"
+          TopLeft="5.50000000000001,107.5" />
+        <EdgeLayout
+          Id="Package\Test_DB.Paths[OLE DB Source Output]"
+          TopLeft="104.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
