@@ -1,7 +1,8 @@
 # SSIS-Data-Management-and-Integration-Project-SSIS
 Project Overview
 
-This project demonstrates the use of SQL Server Integration Services (SSIS) to design and implement various ETL (Extract, Transform, Load) workflows. The objective was to transfer, process, and manage data between an existing database ([ITI DB]) and a newly created database ([Test DB]), as well as generate and manipulate files for reporting purposes.
+This project demonstrates the use of SQL Server Integration Services (SSIS) to design and implement various ETL (Extract, Transform, Load) workflows. 
+The objective was to transfer, process, and manage data between an existing database ([ITI DB]) and a newly created database ([Test DB]), as well as generate and manipulate files for reporting purposes.
 
 The project covers essential data integration and transformation tasks, showcasing practical applications of SSIS tools and components.
 
